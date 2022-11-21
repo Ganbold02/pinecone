@@ -1,2 +1,13 @@
 1. https:/via.placeholder.com/150x50 - pic
 2. https://www.lipsum.com/ - text
+
+prettier
+Prettier - Code formatter
+Format
+	editor: format on paste
+	format on save
+Autosave
+	files: Auto Save
+		onFocusChange
+Default formatter
+	Pr - code
