@@ -1,4 +1,4 @@
-let baby = "Baby Shark",
+  let baby = "Baby Shark",
   doo = "doo-doo",
   mommy = "Mommy Shark",
   daddy = "Daddy Shark",
