@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let age = 10;
+      if (age < 0) {
+        console.log("buruu nas baina");
+      } else if (age >= 2 && age <= 5) {
+        console.log("Tsetserlegiin nas");
+      } else if (age >= 6 && age <= 18) {
+        console.log("surguuliin nas");
+      }
+
+      let a = 10,
+        b = 18,
+        c = 12;
+      if (a > b && a > c) {
+        console.log("ah1");
+      } else if (b > a && b > c) {
+        console.log("ah2");
+      } else c > a && c > b;
+      {
+        console.log("ah3");
+      }
+
+      // 1 2
+      let too = 21;
+      if (too % 2 === 0) {
+        console.log("tegsh");
+      } else {
+        console.log("sondgoi");
+      }
+
+      let jil = 2024;
+      if ((jil % 4 === 0 && jil % 100 !== 0) || jil % 400 === 0) {
+        console.log("undur jil");
+      } else {
+        console.log("undur jil bish");
+      }
+
+      let atoo = 1000,
+        btoo = 300,
+        ctoo = 9999,
+        dtoo = 59000,
+        tegsh = 0;
+      if (999 < atoo && atoo <= 9999) {
+        tegsh += atoo; // huvisagchid khadgalj bgaa
+      }
+      if (999 < btoo && btoo <= 9999) {
+        tegsh += btoo;
+      }
+      if (999 < ctoo && ctoo <= 9999) {
+        tegsh += ctoo;
+      }
+      if (999 < dtoo && dtoo <= 9999) {
+        tegsh += dtoo;
+      }
+      console.log(tegsh);
+
+      let atooo = 2 ** 25; // zereg
+      console.log(atooo);
+    </script>
+  </body>
+</html>
