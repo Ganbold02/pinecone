@@ -14,9 +14,23 @@
         let ognoo=window.prompt('ognoo oruulna uu');
         let sar=window.prompt('sar oruulna uu');
         let udur=window.prompt('ognoo oruulna uu');
-        if(ognoo.length===4&&sar.length===2&&udur.length===2){
-            console.log(`${ognoo}-${sar}-${udur}`);
-        }else{console.log('buruu')}
+        
+        if(ognoo.length===4){
+                ognoo;
+        }else{console.log("ognoo zuv oruulna uu?")}
+        if(1<=sar&&sar<=12){
+            if(sar.length!==2){
+                sar="0"+sar;
+            }else{sar}
+        }
+        if(1<=udur&&udur<=31){
+            if(udur.length!==2){
+                udur="0"+udur;
+            }else{udur}
+        }
+        console.log(`${ognoo}-${sar}-${udur}`);
+            
+        
         
     </script>
 </body>
