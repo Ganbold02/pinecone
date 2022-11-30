@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        /*Гараас огноо, сар, өдөр гэсэн утгуудыг аван дараах форматын дагуу харуулна уу. 
+        /*1. Гараас огноо, сар, өдөр гэсэн утгуудыг аван дараах форматын дагуу харуулна уу. 
         Жишээ 2009, 12, 31 гэж орж ирвэл “2009-12-31”. Анхаарах зүйл хэрвээ өдөр, сар нэг 
         оронтой байвал 2 оронтой болгох буюу сар нь  1 гэж байвал “01” болгох, гараас оруулж байгаа утгыг шалгах*/
         let ognoo=window.prompt('ognoo oruulna uu');
@@ -29,9 +29,21 @@
             }else{udur}
         }
         console.log(`${ognoo}-${sar}-${udur}`);
-            
-        
-        
+        /*2. Гараас утасны дугаар ( 99001234 ) аван шалгах, 
+        зөв дугаар бол харгалзах операторыг (Unitel, Mobicom, G-Mobile, Skytel) хэвлэх , 
+        буруу дугаар бол буруу гэсэн мессежийг өгөх console.log(str.substr(0, 10));*/    
+        let dugaar=window.prompt('Utasnii dugaar oruulna uu?'), utasD;
+        let Odugaar=(dugaar.substr(0,2));
+        if(Odugaar==99){
+            utasD='Mobicom';
+        }else if(Odugaar==88){
+            utasD='Unitel';
+        }else if(Odugaar==98){
+            utasD='G-Mobile';
+        }else if(Odugaar==91){
+            utasD='Skytel';
+        }else{utasD='buruu dugaar'}
+        console.log(utasD);
     </script>
 </body>
 </html>
