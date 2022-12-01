@@ -23,7 +23,7 @@
             let Rtoo2=Number(Rtoo);
             let RegisterD=Ruseg+Rtoo2
             console.log(Ruseg, Rtoo, RegisterD);
-            if(RegisterD.length===10){
+            if(!Number(Ruseg) && Number(Rtoo2)&& RegisterD.length===10){
                 MRdugaar='монгол улсын регистрийн дугаарыг зөв орууллаа';
             }else{'монгол улсын иргэний бүртгэлийн дугаарыг буруу орууллаа'}
             console.log(MRdugaar);
