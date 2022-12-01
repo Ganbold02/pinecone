@@ -11,3 +11,7 @@ Autosave
 		onFocusChange
 Default formatter
 	Pr - code
+
+GitHub
+git reset --hard
+Git pull
