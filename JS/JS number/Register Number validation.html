@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Монгол улсын иргэний бүртгэлийн дугаар болох регистрийн дугаар нь 10 оронтой эхний 2 орон нь үсэг үлдсэн нь тоо байдаг билээ. 
+            Тэгвэл хэрвээ хэрэглэгч гараас 10 тэмдэгт оруулахад эхлээд тухайн оруулсан утганы урт нь 10 байгаа эсэх дараа нь 
+            эхний 2 орон нь зөвхөн үсэг эсэх хамгийн эцэст нь үлдсэн 8 тэмдэгт нь бүхэлдээ тоо эсэхийг шалгана уу. 
+            Хэрвээ энэ бүх нөхцлүүд биелж байвал та монгол улсын регистрийн дугаарыг зөв орууллаа гэж харуулна уу. 
+            Хэрвээ аль нэг нөхцөл нь буруу байвал та монгол улсын иргэний бүртгэлийн дугаарыг буруу орууллаа гэж харуулна уу.*/
+            let Rdugaar='СЦ90091817';
+            if(Rdugaar.length===10){
+                Rnumber='10 oron bna';
+            }else{Rnumber='Buruu bna'}
+            console.log(Rnumber);
+            let Ruseg=Rdugaar.substr(0,2);
+            let Rtoo=Rdugaar.substr(2,9);
+            let Rtoo2=Number(Rtoo);
+            let RegisterD=Ruseg+Rtoo2
+            console.log(Ruseg, Rtoo, RegisterD);
+            if(RegisterD.length===10){
+                MRdugaar='монгол улсын регистрийн дугаарыг зөв орууллаа';
+            }else{'монгол улсын иргэний бүртгэлийн дугаарыг буруу орууллаа'}
+            console.log(MRdugaar);
+            
+    </script>
+</body>
+</html>
