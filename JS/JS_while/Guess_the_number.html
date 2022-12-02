@@ -9,15 +9,18 @@
   <body>
     <script>
       //1. 1-100 ийн хооронд random оор 1 утга авдаг randomNumber гэсэн variable зарлана уу.
+      //2. Prompt ашиглан 1 утга аваад тэр тоог таах хүртэл зогсолтгүй ажиллах loop бичээргэй.
+      //3. Хэрвээ prompt - оос авсан утга нь randomNumber оос их бол "таны оруулсан тоо их байна" г.м чиглүүлэх маягаар хэвлэдэг байх.
       //let randomNumber = Math.floor(Math.random() * 100) + 1;
       //Let garaasOruul = window.prompt("Та 100 дотор тоо оруулна уу");
       //console.log(randomNumber);
 
-      let randomNumber = Math.floor(Math.random() * 100) + 1,
+      let randomNumber = Math.floor(Math.random() * 101),
         garaasOruul = window.prompt(
           `Та 100 дотор тоо оруулна уу ${randomNumber}`
         );
-      while (Number(randomNumber) !== Number(garaasOruul)) {
+      console.log(randomNumber);
+      while (randomNumber !== Number(garaasOruul)) {
         if (Number(randomNumber) === Number(garaasOruul)) {
           break;
         }
@@ -31,8 +34,6 @@
       }
       alert(`ta zuv taalaa`);
       //console.log(j);
-      //2. Prompt ашиглан 1 утга аваад тэр тоог таах хүртэл зогсолтгүй ажиллах loop бичээргэй.
-      //3. Хэрвээ prompt - оос авсан утга нь randomNumber оос их бол "таны оруулсан тоо их байна" г.м чиглүүлэх маягаар хэвлэдэг байх.
     </script>
   </body>
 </html>

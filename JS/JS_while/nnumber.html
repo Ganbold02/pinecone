@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //12345 -> 54321 n хувьсагчийн утгыг тоог урвуул.
+      let n = 12345,
+        ntoo = " ";
+      n = n.toString();
+      // 1 -> n[0], 2->n[1] ... 5->n[4];
+      // urt 5
+      // n[5] -> ""
+      // 4 3 2 1 0
+      for (let i = n.length - 1; i >= 0; i--) {
+        // ntoo = Number(ntoo);
+        ntoo += n.charAt(i);
+      }
+      console.log(Number(ntoo));
+    </script>
+  </body>
+</html>
