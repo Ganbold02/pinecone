@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1. 1-100 ийн хооронд random оор 1 утга авдаг randomNumber гэсэн variable зарлана уу.
+      //let randomNumber = Math.floor(Math.random() * 100) + 1;
+      //Let garaasOruul = window.prompt("Та 100 дотор тоо оруулна уу");
+      //console.log(randomNumber);
+
+      let randomNumber = Math.floor(Math.random() * 100) + 1,
+        garaasOruul = window.prompt(
+          `Та 100 дотор тоо оруулна уу ${randomNumber}`
+        );
+      while (Number(randomNumber) !== Number(garaasOruul)) {
+        if (Number(randomNumber) === Number(garaasOruul)) {
+          break;
+        }
+        if (garaasOruul < randomNumber) {
+          alert("baga bna");
+        } else {
+          alert("ikh bna");
+        }
+
+        garaasOruul = Number(window.prompt("zuv too oruul"));
+      }
+      alert(`ta zuv taalaa`);
+      //console.log(j);
+      //2. Prompt ашиглан 1 утга аваад тэр тоог таах хүртэл зогсолтгүй ажиллах loop бичээргэй.
+      //3. Хэрвээ prompt - оос авсан утга нь randomNumber оос их бол "таны оруулсан тоо их байна" г.м чиглүүлэх маягаар хэвлэдэг байх.
+    </script>
+  </body>
+</html>
