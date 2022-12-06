@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //let rDugaar = "GG99889940";
+      function register(rDugaar) {
+        let Khuis = rDugaar.substr(8, 1);
+        let tUdur = rDugaar.substr(6, 2);
+        let tSar = rDugaar.substr(4, 2);
+        let tOn = rDugaar.substr(2, 2);
+        let oGnoo = rDugaar.substr(5, 1);
+        let oGnoo2 = "";
+
+        let Tonn = oGnoo2 + tOn;
+        console.log(Tonn);
+        let utga = false;
+        if (Number(Khuis) % 2 !== 0) {
+          utga = "эрэгтэй";
+        } else {
+          utga = "эмэгтэй";
+        }
+        if (Number(oGnoo) <= 2) {
+          oGnoo2 = 19;
+        } else {
+          oGnoo2 = 20;
+        }
+        alert(`Таны хүйс ${utga} төрсөн ${Tonn} он ${tSar}сар ${tUdur}өдөр`);
+      }
+      let rDugaar = window.prompt("Та РД оруулна уу");
+
+      register(rDugaar);
+    </script>
+  </body>
+</html>
