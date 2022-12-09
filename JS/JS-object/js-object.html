@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const student = {
+      //     LastName: "Odgerel",
+      //     FirstName: "Sed-Erden",
+      //     age: 17,
+      //     hobby: ["game", "game2", "game3"],
+      //   };
+      //   console.log(
+      //     `${student.LastName} овогтой ${student.FirstName} ${student.age}`
+      //   );
+      //   const studentCopy = Object.assign(student);
+      const data = [
+        { gender: "M", firstName: "Dorj", LastName: "Bat", point: 80, age: 19 },
+        {
+          gender: "F",
+          firstName: "Sukhee",
+          LastName: "Bat",
+          point: 78,
+          age: 21,
+        },
+        {
+          gender: "F",
+          firstName: "Ganaa",
+          LastName: "Bat",
+          point: 76,
+          age: 17,
+        },
+        {
+          gender: "M",
+          firstName: "Jaagii",
+          LastName: "Bat",
+          point: 68,
+          age: 76,
+        },
+        {
+          gender: "F",
+          firstName: "Tuugii",
+          LastName: "Bat",
+          point: 69,
+          age: 34,
+        },
+        {
+          gender: "F",
+          firstName: "Lkhagva",
+          LastName: "Bat",
+          point: 90,
+          age: 37,
+        },
+        {
+          gender: "M",
+          firstName: "Chimdee",
+          LastName: "Bat",
+          point: 98,
+          age: 42,
+        },
+        {
+          gender: "M",
+          firstName: "Naidan",
+          LastName: "Bat",
+          point: 93,
+          age: 41,
+        },
+        {
+          gender: "F",
+          firstName: "Khuygaa",
+          LastName: "Bat",
+          point: 71,
+          age: 34,
+        },
+        {
+          gender: "M",
+          firstName: "Baagii",
+          LastName: "Bat",
+          point: 100,
+          age: 27,
+        },
+      ];
+      // huiseer ni, Er: ted Em: ted
+      // Nasnii angilaar ni 0-17 hurtleh, 18-25, 25-40, 40+
+      //Avsan dungeer ni A:1, B:1,C:1,D:1,F:1
+      //nereer ni haidag
+      function getGender(list, gender) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].gender === gender) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      const FeMaleCount = getGender(data, "F");
+      const maleCount = getGender(data, "M");
+
+      console.log(`Niit ${FeMaleCount} emegtei, ${maleCount} eregtei bna`);
+
+      function getCountAge(list, min, max) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].age >= min && list[i].age < max) {
+            count++;
+          }
+        }
+        return count;
+      }
+      XMLDocument;
+      function getCountPoint(list, type, min, max) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].point >= min && list[i].point < max) {
+            count++;
+          }
+        }
+        return count;
+      }
+      const childrenCount = getCountAge(data, 0, 18);
+      const youth = getCountAge(data, 18, 30);
+      const adult = getCountAge(data, 30, 55);
+      const elder = getCountAge(data, 55, 200);
+      console.log(`Niit:
+      ${childrenCount} huuhed,
+      ${youth} zaluu,
+      ${adult} ider,
+      ${elder} nastan,
+      `);
+
+      const totalA = getCountPoint(data, "point", 90, 101);
+      const totalB = getCountPoint(data, "point", 80, 90);
+      const totalC = getCountPoint(data, "point", 70, 80);
+      const totalD = getCountPoint(data, "point", 60, 70);
+      const totalF = getCountPoint(data, "point", 0, 59);
+
+      console.log(`
+      A dun=${totalA},
+      B dun=${totalB},
+      C dun=${totalC},
+      D dun=${totalD},
+      F dun=${totalF}`);
+    </script>
+  </body>
+</html>
