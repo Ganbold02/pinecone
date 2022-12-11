@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+         */
+        const users = [
+            {
+                name: 'Alex',
+                email: 'alex@alex.com',
+                skills: ['HTML', 'CSS', 'JavaScript'],
+                age: 45,
+                isLoggedIn: false,
+                points: 30
+            },
+            {
+                name: 'Job',
+                email: 'job@job.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+                age: 25,
+                isLoggedIn: false,
+                points: 50
+            },
+            {
+                name: 'Brook',
+                email: 'daniel@daniel.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+                age: 39,
+                isLoggedIn: true,
+                points: 50
+            },
+            {
+                name: 'Daniel',
+                email: 'daniel@alex.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+                age: 25,
+                isLoggedIn: false,
+                points: 40
+            },
+            {
+                name: 'John',
+                email: 'john@john.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+                age: 20,
+                isLoggedIn: true,
+                points: 50
+            },
+            {
+                name: 'Thomas',
+                email: 'thomas@thomas.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+                age: 18,
+                isLoggedIn: false,
+                points: 40
+            },
+            {
+                name: 'Paul',
+                email: 'paul@paul.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+                age: 25,
+                isLoggedIn: false,
+                points: 40
+            }
+        ]
+        //1 Нэг хэрэглэгчийн объектын бүх утгыг авч хэвлэх.
+        const user1 = (user) => {
+            return Object.values(user);
+        };
+
+        console.log(user1(users[0]));
+
+        //2 - Хэрэглэгчийн объектод олон ур чадвар эзэмшсэн хүнийг олоорой.
+        const Userchadvar = (users) => {
+            let index, max = 0;
+            for (let k = 0; k < users.length; k++) {
+                if (users[k].skills.length > max) {
+                    index = k;
+                    max = users[k].skills.length;
+                }
+            }
+            return users[index];
+        };
+        const chavdar = Userchadvar(users);
+        console.log(chavdar);
+
+        //3 - Нэвтэрсэн хэрэглэгчдийг тоолж, дараах объектоос 50-аас дээш оноо авсан хэрэглэгчдийг тоол.
+        const UserCountT = (users) => {
+                let UserCo = {
+                    Nevtersen: 0,
+                    Onoo: 0,
+                };
+                for (let u = 0; u < users.length; u++) {
+                    if (users[u].isLoggedIn) {
+                        UserCo.Nevtersen++;
+                        if (users[u].points >= 50) {
+                            UserCo.Onoo++;
+                        }
+                    }
+                }
+                return UserCo;
+            }
+            const UsCount = UserCountT(users);
+            console.log(UsCount);
+            //Хэрэглэгчийн объектоос MERN ( MongoDB, Express, React, Node ) стек хөгжүүлэгч хүмүүсийг олоорой.
+                let UserIT = [];
+                for (let p = 0; p < users.length; p++) {
+                    if (users[p].skills.includes('MongoDB') && users[p].skills.includes('Express') && users[p].skills.includes('React') && users[p].skills.includes('Node')) {
+                        UserIT.push(users[p]);
+                    }
+                }
+                console.log(UserIT);
+
+
+            // 4 - Хамгийн их настай 3 хүмүүсийн мэдээллийг хэвлэх
+            let UserAgeTT=[];
+            for(let a=0; a<users.length;a++){
+                if(users[a].age>a){
+                    UserAgeTT[a].push(users[a]);
+                }
+            }
+            asuuhhhhhhh
+            // function dToo(too) {
+        //     let nT = 0;
+        //     for (let i = 0; i <= too; i++) {
+        //         nT += i;
+        //     }
+        //     return nT;
+        // }
+
+        // function 
+        // let tavTalt = '', taSpace = true;
+        // for (let e = 0; e <= 5; e++) {
+        //     if (taSpace) {
+        //         for (let w = 1; w <= 5 - e; w++) {
+        //             tavTalt += ' ';
+        //         }
+        //     }
+        //     for (let r = 0; r <= e; r++) {
+        //         tavTalt += '* ';
+                
+        //     }
+        //     tavTalt += '\n';
+        // }
+
+        // console.log(tavTalt);
+
+        // let x=(num)=>{
+        //     return num+num;
+        // };
+
+        // console.log(x(9));
+    </script>
+</body>
+
+</html>
