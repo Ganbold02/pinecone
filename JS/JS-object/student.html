@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-       /*   1. Ангийнхаа сурагчидын дата үүсгэ. (name: "Гончигсумлай", birthOfYear: 1999, hobby: "морь", single: false)
-            */
+      /*   1. Ангийнхаа сурагчидын дата үүсгэ. (name: "Гончигсумлай", birthOfYear: 1999, hobby: "морь", single: false)
+       */
 
-        let data=[
-                {name: "Гончигсумлай", birthOfYear: 1999, hobby: "морь", single: false},
-                {name: "Саруултөгс", birthOfYear: 2005, hobby: "хонь", single: true},
-                {name: "Солонго", birthOfYear: 2007, hobby: "гахай", single: false},
-                {name: "Сүхээ", birthOfYear: 2001, hobby: "могой", single: true},
-                {name: "Батаа", birthOfYear: 1988, hobby: "луу", single: false}
-        ];
-        /*2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function бичэх.
-            3. Сурагчийн насыг бодож олох function бичэх.
-            */
-        let Age=0;
-        
-        console.log(oGnoo);
-        for(let i=0; i<data.length;i++){
-            if(data[i].birthOfYear<=2002){
-                Age=2022-data[i].birthOfYear;
-                
-            }
-         console.log(Age);     
-        }  
-       /* 4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх.*/
-        let gender=0;
-       for(let j=0;j<data.length;j++){
-            if(data[j].single){
-                gender++;
-            }
-       }console.log(gender);
+      let data = [
+        {
+          name: "Гончигсумлай",
+          birthOfYear: 1999,
+          hobby: "морь",
+          single: false,
+        },
+        { name: "Саруултөгс", birthOfYear: 2005, hobby: "хонь", single: true },
+        { name: "Солонго", birthOfYear: 2007, hobby: "гахай", single: false },
+        { name: "Сүхээ", birthOfYear: 2001, hobby: "могой", single: true },
+        { name: "Батаа", birthOfYear: 1988, hobby: "луу", single: false },
+      ];
+      let data1 = [
+        {
+          name: "Гончигсумлай",
+          birthOfYear: 1999,
+          hobby: "морь",
+          single: false,
+        },
+        { name: "Саруултөгс", birthOfYear: 2005, hobby: "хонь", single: true },
+        { name: "Солонго", birthOfYear: 2007, hobby: "гахай", single: false },
+        { name: "Сүхээ", birthOfYear: 2001, hobby: "могой", single: true },
+        { name: "Батаа", birthOfYear: 1988, hobby: "луу", single: false },
+      ];
+      /*2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function бичэх.
+       *  3. Сурагчийн насыг бодож олох function бичэх.
+       */
+      function getAge(student) {
+        let age = -1;
+        if (student.birthOfYear <= 2022) {
+          age = 2022 - student.birthOfYear;
+        }
+        return age;
+      }
+
+      function addAgeOnStudents() {
+        for (let i = 0; i < data.length; i++) {
+          const student = data[i];
+          student.age = getAge(student);
+        }
+      }
+      addAgeOnStudents();
+      console.log(data);
+
+      /* 4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх.*/
+      function isSIngle(arr) {
+        let gender = 0;
+
+        for (let j = 0; j < arr.length; j++) {
+          if (arr[j].single) {
+            gender++;
+          }
+        }
+        return gender;
+      }
+      console.log(isSIngle(data1));
     </script>
-</body>
+  </body>
 </html>
