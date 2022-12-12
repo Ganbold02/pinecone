@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myBtn">Намайг дар</button>
+    <p id="BackColor">Миний арын өнгө улаан</p>
+    <p id="BackColor2">Миний арын өнгө шар</p>
+    <script>
+        let myButton = document.getElementById("myBtn");    
+            function changeBackgroundColor() {
+                //document.body.style.backgroundColor='red';
+                document.getElementById("BackColor").style.backgroundColor = "blue";
+                document.getElementById("BackColor").style.color = "white";
+
+                document.getElementById("BackColor2").style.backgroundColor = "yellow";
+                document.getElementById("BackColor2").style.color = "white";
+            }
+            myButton.addEventListener("click", changeBackgroundColor);
+    </script>
+</body>
+
+</html>
