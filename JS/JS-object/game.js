@@ -1,3 +1,4 @@
+let isTimeOut = false;
 let score = 0;
 const scoreTarget = document.querySelector("#scoreTarget");
 
@@ -46,15 +47,22 @@ function reDraw() {
       li.style.backgroundColor = getDifferentColor(colors);
     }
     li.addEventListener("click", function () {
-      if (!isNormal) {
-        updateScore(1);
-        reDraw();
-      } else {
-        updateScore(-2);
-      }
+      if (!isTimeOut) {
+        if (!isNormal) {
+          updateScore(1);
+          reDraw();
+        } else {
+          updateScore(-2);
+        }
+      } else "time run out your score is:" + score;
     });
     parent.appendChild(li);
   }
 }
 
 reDraw();
+isTimeOut(
+  function () {
+    isTimeOut = true;
+  } * 10000
+);
