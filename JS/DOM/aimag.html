@@ -43,12 +43,28 @@
       console.log(SelectE);
       // Тухайн жагсаалтын элементүүдэд загвар оруулах (текстийн фонт, хэмжээ, текстийн өнгө, хүрээ, padding, margin)
       //document.getElementById("#aimagNames")[0].style.color = "blue";
-      //document.getElementById("#aimag-101")[0].style.m
-
+      document.getElementById("aimag-522").style.color = "green";
+      document.querySelector(".class");
+      function BusOlokh(type, color, backgroundColor) {
+        const arr = document.getElementsByTagName("li");
+        for (let i = 0; i < arr.length; i++) {
+          // console.log(arr[i]);
+          // arr[i].style.backgroundColor = "red";
+          // arr[i].style.fontSize = "24px";
+          if (arr[i].id[6] == type) {
+            // console.log(arr[i] + "hangain bus");
+            document.getElementById(arr[i].id).style.backgroundColor =
+              backgroundColor;
+            document.getElementById(arr[i].id).style.color = color;
+          }
+        }
+      }
+      BusOlokh(5, "white", "black");
+      BusOlokh(1, "black", "green");
       // Аймгуудыг бүс, бүсээр ялган өөр, өөр background color  өгөх  (1 - Хангайн бүс, 2 - Баруун бүс, 3 - Зүүн бүс, 4 - Төвийн бүс, 5 - Улаанбаатар ) Жишээ нь id = aimag-321 ийм байгаа 3 нь бүсийн дугаар, 21 нь аймгийн дугаар юм.
-      let AimagBus = document.getElementById("#aimagNames");
+      let AimagBus = document.getElementById("aimagNames");
       //let ffggg = SelectE;
-      console.log(typeof AimagBus);
+      console.log(AimagBus);
     </script>
   </body>
 </html>
