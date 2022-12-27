@@ -15,3 +15,16 @@ Default formatter
 GitHub
 git reset --hard
 Git pull
+
+
+git fetch origin  
+git checkout GanboldFile
+Git graph
+GitLens (Insiders)
+
+
+// Node Js hereg bolno
+
+express-crud 
+npm i
+npm start
