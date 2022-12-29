@@ -1,110 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-  </head>
-  <body>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Tf-HZXm4FLrR_LxGhosPLIdgULw8hnda6QeXHHKxJWr-cc9Hny8UO-zPw-RTD4TBRHBA_i-1M4jN_iVcu4TVldbIwAFbcJU-39uxiuwPGEzT7EJnuJ-BIzVv8y1rOqMCJAq3ysGDrH-Hxca3uKt71w" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvMTA1NzYxNTQ3MTYwOTkxMzM4NS8xMDU3NjE1Njc2MzQ2NDg2ODY0L2luZGV4Lmh0bWw"/></head>
+<body>
     <div class="container-sm mt-5">
-      <div class="d-flex justify-content-end">
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#modal"
-        >
-          Create +
-        </button>
-      </div>
-      <div class="row g-3" id="cars"></div>
-    </div>
-    <div
-      class="modal fade"
-      id="modal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="imageUrl" class="form-label">imageUrl</label>
-              <input
-                type="url"
-                class="form-control"
-                id="imageUrl"
-                placeholder=""
-                name="imageUrl"
-              />
-              <label for="model" class="form-label">model</label>
-              <input
-                type="url"
-                class="form-control"
-                id="model"
-                placeholder=""
-                name="imageUrl"
-              />
-              <label for="brand" class="form-label">brand</label>
-              <input
-                type="url"
-                class="form-control"
-                id="brand"
-                placeholder=""
-                name="v"
-              />
-              <label for="price" class="form-label">price</label>
-              <input
-                type="number"
-                min="0"
-                max="20000000"
-                step="50000"
-                class="form-control"
-                id="price"
-                placeholder=""
-                name="imageUrl"
-              />
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" id="formSubmit" class="btn btn-primary">
-              Save changes
-            </button>
-          </div>
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Create +</button>
+            <a href="./signin.html" class="btn btn-primary ms-3">Sign in</a>
         </div>
-      </div>
+        <div class="row g-3" id="cars">
+            
+        </div>
     </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
-      integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./app.js"></script>
-  </body>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="imageUrl" class="form-label">image Url</label>
+                        <input type="text" class="form-control" id="imageUrl" placeholder="" name="imageUrl">
+                    </div>
+                    <div class="mb-3">
+                        <label for="model" class="form-label">model</label>
+                        <input type="text" class="form-control" id="model" placeholder="" name="model">
+                    </div>
+                    <div class="mb-3">
+                        <label for="brand" class="form-label">brand</label>
+                        <input type="text" class="form-control" id="brand" placeholder="" name="brand">
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">price</label>
+                        <input type="number" min="0" max="20000000" step="50000" class="form-control" id="price" placeholder="" name="price">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="formSubmit">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    <script src="main.js"></script>
+</body>
 </html>
