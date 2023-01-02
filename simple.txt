@@ -28,3 +28,10 @@ GitLens (Insiders)
 express-crud 
 npm i
 npm start
+
+N
+npx create-react-app folder-ner-bichih
+cd folder-ner-bichih
+npm start
+
+npm stop control=c
