@@ -35,3 +35,29 @@ cd folder-ner-bichih
 npm start
 
 npm stop control=c
+
+
+L
+
+pwd - baigaa bairshil
+
+Ls - doctor ni baa file 
+
+Ls -l - dooshoo
+
+Ls -la - nuugdsan file
+Ls -l
+
+Cd change directory 
+Cd havtasruu ooh
+
+Cd . Odor baigaa bairshil
+Cd .. umnuh havtasruu oroh
+
+mkdir uusgeh havtasnii ner - havas uusgeh
+touch hello.txt - file uusgeh
+Cat hello.txt dotorhiig ni harah
+Echo "hi">hello.txt
+rm hello.txt - file ustgarh
+Rm -r haves ustgah
+
