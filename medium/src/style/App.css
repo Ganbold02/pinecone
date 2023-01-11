@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-input {
+  border-radius: 20px;
+  width: 240px;
+  height: 40px;
+  padding-left: 50px;
+  padding-right: 20px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.search-input::placeholder {
+  color: #706e72;
+}
+.search-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.slim-nav {
+  border-bottom: 1px solid #ebe9ec;
+}
