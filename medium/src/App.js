@@ -1,16 +1,14 @@
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
-import "../src/style/App.css";
-import SlimNav from "./components/SlimNav.jsx";
-import Article from "./Page/Article";
+import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './style/App.css';
+import { Article } from './pages/article';
 
 function App() {
   return (
     <>
       <Article />
-      Article Page
     </>
-  );
+  )
 }
 
 export default App;
