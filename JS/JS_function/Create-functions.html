@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // 1. Өгөгдсөн 2 тооны ихийг олох функц бич.
-        function numberL(a,b){
-            LargeN="";
-            if(a>b){
-                return LargeN=a;
-            } 
-            if(a<b){
-                return LargeN=b;
-            }
+      // 1. Өгөгдсөн 2 тооны ихийг олох функц бич.
+      //   function numberL(a, b) {
+      //     LargeN = "";
+      //     if (a > b) {
+      //       return (LargeN = a);
+      //     }
+      //     if (a < b) {
+      //       return (LargeN = b);
+      //     }
+      //   }
+      //   console.log(numberL(11, 9));
+
+      // 2. Өгөгдсөн array -аас өгөгдсөн тоо байгаа эсэхийг олох функц бич. Тухайн тоо байвал индексийг буцаана. Байхгүй бол -1 буцаана.
+      let arrayNumber = [1, 2, 5, 6, 7, 8, 9];
+      let arrayNumber1 = [1, 2, 5, 6, 7, 8, 9];
+      let arrayNumber2 = [1, 2, 5, 6, 7, 8, 3];
+
+      function findNumber(arr, num) {
+        for (let i = 0; i < arr.length; i++) {
+          console.log(i);
+          if (arrayNumber[i] === num) {
+            return arrayNumber[i];
+          }
         }
-        console.log(numberL(11,9));
-        
-        // 2. Өгөгдсөн array -аас өгөгдсөн тоо байгаа эсэхийг олох функц бич. Тухайн тоо байвал индексийг буцаана. Байхгүй бол -1 буцаана.
-        let arrayNumber=[1,2,5,6,7,8,3];
-        function findNumber(){
-            let Fnumber="";
-            for(let i=0;i<arrayNumber.length;i++){
-                console.log(i);
-                
-                
-                // if(arrayNumber[i]===i){
-                //     return Fnumber=i;
-                // }else{
-                //     return Fnumber=-1;
-                // }
-                
-            } 
-        }
-        // console.log(findNumber(5));
-        // 3. Өгөгдсөн тэмдэгт мөрөөс -аас өгөгдсөн тэмдэгт байгаа эсэхийг олох функц бич. Тухайн тэмдэгт байвал индексийг буцаана. Байхгүй бол -1 буцаана.
-        // 4. Өгөгдсөн 2 тоон интервал дахь санамсаргүй тоо буцаах функц бич.
-        // 5. Өгөгдсөн array - ийн дундажыг олох функц бич.
-        // 6. Өгөгдсөн array - ийн нийлбэрийг олох функц бич.
+        return -1;
+      }
 
-        // 7. Өгөгдсөн тоо анхны эсэхийг олох функц бич.
+      console.log("bodlogo 2 : " + findNumber(arrayNumber, 9));
+      console.log("bodlogo 2 : " + findNumber(arrayNumber1, 9));
+      console.log("bodlogo 2 : " + findNumber(arrayNumber2, 9));
+      // console.log(findNumber(5));
+      // 3. Өгөгдсөн тэмдэгт мөрөөс -аас өгөгдсөн тэмдэгт байгаа эсэхийг олох функц бич. Тухайн тэмдэгт байвал индексийг буцаана. Байхгүй бол -1 буцаана.
+      // 4. Өгөгдсөн 2 тоон интервал дахь санамсаргүй тоо буцаах функц бич.
+      // 5. Өгөгдсөн array - ийн дундажыг олох функц бич.
+      // 6. Өгөгдсөн array - ийн нийлбэрийг олох функц бич.
 
-        // 8. Өгөгдсөн тэмдэгт мөрийн бүх үсгийг том үсэг болгох функц бич.
+      // 7. Өгөгдсөн тоо анхны эсэхийг олох функц бич.
 
-        // 9. Өгөгдсөн тэмдэгт мөрийн бүх үсгийг жижиг үсэг болгох функц бич.
+      // 8. Өгөгдсөн тэмдэгт мөрийн бүх үсгийг том үсэг болгох функц бич.
+
+      // 9. Өгөгдсөн тэмдэгт мөрийн бүх үсгийг жижиг үсэг болгох функц бич.
     </script>
-</body>
+  </body>
 </html>
