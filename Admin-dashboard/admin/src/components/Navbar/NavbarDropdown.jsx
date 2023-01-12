@@ -44,7 +44,7 @@ export default function NavbarDropdown({ img, items }) {
       >
         {items.map((item) => {
           if (item.label === "---") return<DropdownDivider key={`dropdown-item-${index}`}/>
-            return <DropdownItem
+            return <DropdownItem/>
         })}
       </ul>
     </div>
