@@ -55,18 +55,35 @@
       // 4. Өгөгдсөн 2 тоон интервал дахь санамсаргүй тоо буцаах функц бич.
 
       // 5. Өгөгдсөн array - ийн дундажыг олох функц бич.
-      let arryNum=[2,3,4,5,9,8,7];
-      
-      function avargeNumber(arrN){
-        // let Anumb=0;
-        for(let i=0;i<arrN.length;i++){
-          console.log(i);
-            // Anumb=+i;
+      let arryNum = [2, 3, 4, 5, 9, 8, 7];
+
+      // function avargeNumber(arrN) {
+      //   let Anumb = 0;
+      //   for (let i = 0; i < arrN.length; i++) {
+      //     Anumb += arrN[i];
+
+      //     // Anumb=+i;
+      //   }
+      //   let a = Anumb / arrN.length;
+      //   return a;
+      //   // console.log(Anumb);
+      // }
+      // console.log(avargeNumber(arryNum));
+      // 6. Өгөгдсөн array - ийн нийлбэрийг олох функц бич.
+      let arrySum = [2, 3, 4, 5, 9, 8, 7];
+
+      function avargeNSUM(arrS) {
+        let Anumb = 0;
+        for (let i = 0; i < arrS.length; i++) {
+          Anumb += arrS[i];
+
+          // Anumb=+i;
         }
+
+        return Anumb;
         // console.log(Anumb);
       }
-      // 6. Өгөгдсөн array - ийн нийлбэрийг олох функц бич.
-
+      console.log(avargeNSUM(arryNum));
       // 7. Өгөгдсөн тоо анхны эсэхийг олох функц бич.
 
       // 8. Өгөгдсөн тэмдэгт мөрийн бүх үсгийг том үсэг болгох функц бич.
