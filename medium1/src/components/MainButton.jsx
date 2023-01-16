@@ -1,10 +1,7 @@
-import { Children } from "react";
-
-export default function MainButton({href,Children}){
-    return( 
+export default function MainButton({ href, children }) {
+  return (
     <a href={href} className="btn main-btn">
-        {Children}
+      {children}
     </a>
-         )
-        
+  );
 }
