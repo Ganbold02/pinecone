@@ -1,24 +1,33 @@
 import { useState } from 'react';
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
+
 import { TOAST_CONFIG } from '../utils/configs';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Signin() {
+export default function Singup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [repassword, setRepassword] = useState('');
+
   const navigate = useNavigate();
 
-  const submitSingIn = () => {
+  const submitSignup = () => {
+    // STATUS INFO
     let status = 200;
-    fetch('https://demo-api-one.vercel.app/api/signin', {
+
+    fetch('https://demo-api-one.vercel.app/api/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, repassword }),
     })
       .then((res) => {
         status = res.status;
@@ -29,12 +38,13 @@ export default function Signin() {
           toast.error(data.message, TOAST_CONFIG);
         } else {
           toast.success(data.message, TOAST_CONFIG);
-          localStorage.setItem('token', data.body);
-          navigate('/signin/success');
+          setTimeout(() => {
+            navigate('/signin');
+          }, 1000);
         }
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(err.message, TOAST_CONFIG);
       });
   };
 
@@ -46,41 +56,36 @@ export default function Signin() {
             <Form
               onSubmit={(e) => {
                 e.preventDefault();
-                submitSingIn();
+                submitSignup();
               }}
             >
               <Form.Group className="mb-3">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   value={email}
-                  type="email"
-                  placeholder="Enter email"
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
+                  type="email"
+                  placeholder="Enter email"
                 />
-                <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
               </Form.Group>
-
               <Form.Group className="mb-3">
                 <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                />
+                <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Password repeat</Form.Label>
+                <Form.Control type="password" placeholder="Password repeat" value={repassword} onChange={(e) => setRepassword(e.target.value)} />
               </Form.Group>
               <div className="d-flex justify-content-end">
-                <Link to={'/signup'}>
+                <Link to={'/signin'}>
                   <Button variant="outline-success" type="button" className="me-3">
-                    Sign up
+                    Sign in
                   </Button>
                 </Link>
                 <Button variant="primary" type="submit">
-                  Sign in
+                  Sign up
                 </Button>
               </div>
             </Form>
