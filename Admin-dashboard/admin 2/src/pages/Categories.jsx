@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import CategoriesList from "../components/Categories/CategoriesList";
 import Heading from "../components/Heading";
 import CategoriesCreate from "../components/Categories/CategoriesCreate";
@@ -22,14 +22,15 @@ export default function Categories() {
         console.log(err);
         toast.error("aldaa garlaa");
       });
-  }, []);
+  }, [categories]);
 
   return (
     <>
       <div className="container-sm body-container">
-        <Heading title="Categories" handleshow={handleShow} />
+        <Heading title="Categories" handleShow={handleShow} />
         <CategoriesList items={categories} />
       </div>
+      <ToastContainer />
       <DynamicModal
         show={modalShow}
         handleClose={handleClose}

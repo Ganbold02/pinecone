@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ListItem = ({ item, index }) => {
-const [deleted, setDeleted]= useState(false);
-const navigate = useNavigate();
+  const [deleted, setDeleted] = useState(false);
+  const navigate = useNavigate();
 
   const deleteItem = () => {
     let statusCode;
@@ -26,8 +26,8 @@ const navigate = useNavigate();
           toast.success("amjilttai ustlaa");
           setDeleted(true);
         } else {
-          if(statusCode===403||statusCode===401){
-            navigate('/signout');
+          if (statusCode === 403 || statusCode === 401) {
+            navigate("/signout");
           }
           toast.error(data.message);
         }
@@ -36,7 +36,7 @@ const navigate = useNavigate();
         console.log(err);
         toast.error(`aldaa garlaa`);
       });
-      if(deleted) return <></>
+    if (deleted) return <></>;
   };
   return (
     <tr>
@@ -47,7 +47,14 @@ const navigate = useNavigate();
         <button className="btn btn-sm btn-outline-primary me-2">
           <SlPencil />
         </button>
-        <button className="btn btn-sm btn-outline-danger" onClick={deleteItem}>
+        <button
+          className="btn btn-sm btn-outline-danger"
+          onClick={() => {
+            if (window.confirm("Ustgamaar bnuu?")) {
+              deleteItem();
+            }
+          }}
+        >
           <SlTrash />
         </button>
       </td>

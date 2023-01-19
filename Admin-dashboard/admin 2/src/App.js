@@ -8,11 +8,11 @@ import Categories from "./pages/Categories";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
-import Signin from "./pages/SignIn";
+import Signin from "./pages/Signin";
 import SignInError from "./pages/SignInError";
 import Singup from "./pages/Singup";
 import SigninSuccess from "./pages/SinginSuccess";
-
+import Signout from "./pages/Signout";
 export default function App() {
   const [me, setMe] = useState(undefined);
 
@@ -50,6 +50,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Categories" element={<Categories />} />
             <Route path="/articles" element={<Articles />} />
+            <Route path="/Signout" element={<Signout setMe={setMe} />} />
           </Routes>
         </div>
       </div>
