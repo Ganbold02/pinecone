@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function CategoriesCreate() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [navigate, setNavigate] = useState("");
+  const navigate = useNavigate();
 
   const submit = () => {
     let statusCode;
@@ -25,7 +25,7 @@ export default function CategoriesCreate() {
       })
       .then((data) => {
         if (statusCode === 200) {
-          toast.success("amjilttai");
+          toast.success("amjilttai nemegdlee");
         } else {
           if (statusCode === 403 || statusCode === 401) {
             navigate("/signout");
@@ -49,19 +49,18 @@ export default function CategoriesCreate() {
         <Form.Label>Name</Form.Label>
         <Form.Control
           value={name}
-          onSubmit={(e) => {
-            e.preventDefault();
-            submit();
+          onChange={(e) => {
+           setName(e.target.value);
           }}
           type="text"
-          placeholder="Name of the post..."
+          placeholder="Name of the category..."
         />
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>description</Form.Label>
         <Form.Control
           value={description}
-          onSubmit={(e) => {
+          onChange={(e) => {
             setDescription(e.target.value);
           }}
           as="textarea"

@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { SlPencil, SlTrash } from "react-icons/sl";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ListItem = ({ item, index }) => {
+const [deleted, setDeleted]= useState(false);
+const navigate = useNavigate();
+
   const deleteItem = () => {
     let statusCode;
     fetch("https://demo-api-one.vercel.app/api/categories", {
@@ -19,7 +24,11 @@ const ListItem = ({ item, index }) => {
       .then((data) => {
         if (toast.success === 200) {
           toast.success("amjilttai ustlaa");
+          setDeleted(true);
         } else {
+          if(statusCode===403||statusCode===401){
+            navigate('/signout');
+          }
           toast.error(data.message);
         }
       })
@@ -27,6 +36,7 @@ const ListItem = ({ item, index }) => {
         console.log(err);
         toast.error(`aldaa garlaa`);
       });
+      if(deleted) return <></>
   };
   return (
     <tr>

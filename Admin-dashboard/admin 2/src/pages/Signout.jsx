@@ -11,6 +11,6 @@ export default function Signout({ setMe }) {
     navigate("/signin");
   }, []);
   return (
-    <div className="w-100 min-vh-100 d-flex align-items-center justify-content-center flex-column"></div>
+    <div className="w-100 min-vh-100 d-flex align-items-center justify-content-center"></div>
   );
 }

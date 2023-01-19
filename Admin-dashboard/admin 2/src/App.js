@@ -8,7 +8,7 @@ import Categories from "./pages/Categories";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
-import Signin from "./pages/Signin";
+import Signin from "./pages/SignIn";
 import SignInError from "./pages/SignInError";
 import Singup from "./pages/Singup";
 import SigninSuccess from "./pages/SinginSuccess";
