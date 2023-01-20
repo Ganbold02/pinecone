@@ -1,14 +1,13 @@
 import "./styles/bootstrap.min.css";
 import "./styles/styles.css";
 import Navbar from "./components/Navbar";
-import DynamicModal from "./components/utils/DynamicModal";
 import { useEffect, useState } from "react";
-import PostCreate from "./components/Blogs/PostCreate";
+// import PostCreate from "./components/Blogs/PostCreate";
 import Categories from "./pages/Categories";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
-import Signin from "./pages/Signin";
+import SignIn from "./pages/SignIn";
 import SignInError from "./pages/SignInError";
 import Singup from "./pages/Singup";
 import SigninSuccess from "./pages/SinginSuccess";
@@ -16,7 +15,7 @@ import Signout from "./pages/Signout";
 export default function App() {
   const [me, setMe] = useState(undefined);
 
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const [menuShow, setMenuShow] = useState(false);
 
   useEffect(() => {
@@ -29,7 +28,7 @@ export default function App() {
   if (!me) {
     return (
       <Routes>
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/SignIn" element={<SignIn />} />
         <Route
           path="/signin/success"
           element={<SigninSuccess setMe={setMe} />}
