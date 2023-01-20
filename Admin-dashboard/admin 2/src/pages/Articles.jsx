@@ -1,23 +1,38 @@
+import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import PostList from "../components/Blogs/PostList";
 import Heading from "../components/Heading";
-import DynamicModal from "../components/utils/DynamicModal";
-import { useState } from "react";
 import PostCreate from "../components/Blogs/PostCreate";
+import DynamicModal from "../components/utils/DynamicModal";
 
 export default function Articles() {
-  const [show, setShow] = useState(false);
+  const [articles, setArticles]=useState([]);
+  const [modalShow, setModalShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setModalShow(false);
+  const handleShow = () => setModalShow(true);
+
+  useEffect(()=>{
+    fetch('https://demo-api-one.vercel.app/api/articles')
+    .then((res)=>res.json())
+    .then((data)=>{
+      setArticles(data.body);
+    })
+    .catch((err)=>{
+      console.log(err);
+      toast.error('Алдаа гарлаа');
+    });
+  },[]);
 
   return (
     <>
       <div className="container-sm body-container">
         <Heading title="Blog posts" handleShow={handleShow} />
-        <PostList />
+        <PostList items={articles} />
       </div>
+      <ToastContainer />
       <DynamicModal
-        show={show}
+        show={modalShow}
         handleClose={handleClose}
         title="Create post"
         content={<PostCreate />}
