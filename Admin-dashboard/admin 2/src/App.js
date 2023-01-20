@@ -1,9 +1,7 @@
 import "./styles/bootstrap.min.css";
 import "./styles/styles.css";
 import Navbar from "./components/Navbar";
-import DynamicModal from "./components/utils/DynamicModal";
 import { useEffect, useState } from "react";
-import PostCreate from "./components/Blogs/PostCreate";
 import Categories from "./pages/Categories";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
