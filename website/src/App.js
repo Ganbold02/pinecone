@@ -3,11 +3,11 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-  <>
-    <Header />
-    <Home />
-  </>
-  )
+    <>
+      <Header />
+      <Home />
+    </>
+  );
 }
 
 export default App;
