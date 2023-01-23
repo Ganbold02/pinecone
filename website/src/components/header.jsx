@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { IoSearchOutline } from 'react-icons/io5';
+import { useEffect } from "react";
+import { useState } from "react";
+import { IoSearchOutline } from "react-icons/io5";
 
 export default function Header() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('https://demo-api-one.vercel.app/api/categories')
+    fetch("https://demo-api-one.vercel.app/api/categories")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data.body);
