@@ -1,32 +1,34 @@
 const express = require("express");
 cors = require("cors");
-
+const bodyParser = require("body-parser");
+const jsonParser = bodyParser.json();
 const app = express();
 app.use(cors());
 
 const port = 8000;
-const categories = [
+let categories = [
   {
-    id: 0,
-    name: "blog",
+    id: 1,
+    name: "Bloog",
   },
   {
-    id: 0,
+    id: 2,
     name: "Technology",
   },
   {
-    id: 0,
+    id: 3,
     name: "photo",
   },
 ];
-
+let nextCatId = categories.length;
 const Article = [
   {
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
-    name: "022 оны есдүгээр сарын 1-2-нд шилжих шөнө  согтууруулах ундаа хэрэглэсэн болон жолоодох эрх дуусгавар болсон үедээ тээврийн хэрэгсэл жолоодон зам тээврийн осол гаргаж, танхайрсан.",
+    name: "Үнэгүй зогсоолтой, үндэсний үйлдвэрлэгчдийн үзэсгэлэн худалдаа",
     id: 12312,
     category: "blog",
+    details: `Малчин Б.Ариунзаяа Улаанбаатар хотоос 870 километрийн зайд байрлах Баянхонгор аймгийн Баянлиг сумаас иржээ. Тэрбээр сарлагийн цэвэр шар тос, ааруул, ингэний хоормогоо борлуулахаар сар шинийн баярыг угтан зохион байгуулж буй "Амар байна уу" үзэсгэлэн худалдааг зорьж ирсэн. Энэ үзэсгэлэн худалдаанд 21 аймаг, нийслэлийн есөн дүүргийн иргэн, малчин, аж ахуйн нэгж оролцож үндэсний үйлдвэрлэлийн бүтээгдэхүүнээ худалдаалж байгаа юм. Тэдний нэг нь малчин Б.Ариунзаяа. Түүний борлуулж буй шар тос килограмм нь 35 мянга, ааруул 25 мянган төгрөгийн үнэтэй.`,
   },
   {
     imageUrl:
@@ -110,9 +112,47 @@ app.get("/categories", (request, response) => {
   response.status(200);
   response.json(categories);
 });
+app.get("/categories/:id", (req, res) => {
+  const { id } = req.params;
+  let category = null;
+
+  for (const row of categories) {
+    if (id == row.id) {
+      category = row;
+      break;
+    }
+  }
+  res.json(category);
+});
+
+app.delete("/categories/:id", (req, res) => {
+  const { id } = req.params;
+  console.log("id:", id);
+  categories = categories.filter((row) => {
+    return row.id !== Number(id);
+  });
+  res.json(id);
+});
 
 app.get("/a", (request, response) => {
   response.status(100);
+});
+
+app.post("/categories", jsonParser, (req, res) => {
+  const { name } = req.body;
+  const newCategory = { id: nextCatId++, name };
+  categories.push(newCategory);
+  res.send(newCategory);
+});
+
+app.put("/categories/:id", (req, res) => {
+  const { id } = req.params;
+  console.log("id:", id);
+  categories = categories.findIndex((item) => {
+    return item.id !== Number(id);
+  });
+  console.log("id:", categories);
+  res.json(id);
 });
 
 app.listen(port, () => {

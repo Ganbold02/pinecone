@@ -5,6 +5,7 @@ import Heading from "../components/Heading";
 import CategoriesCreate from "../components/Categories/CategoriesCreate";
 import DynamicModal from "../components/utils/DynamicModal";
 import CategoriesEdit from "../components/Categories/CategoriesEdit";
+import axios from "axios";
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
@@ -12,10 +13,10 @@ export default function Categories() {
   const [modalContent, setModalContent] = useState(<></>);
 
   useEffect(() => {
-    fetch("https://demo-api-one.vercel.app/api/categories")
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data.body);
+    axios
+      .get("http://localhost:8000/categories")
+      .then((res) => {
+        setCategories(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -27,9 +28,9 @@ export default function Categories() {
     setModalContent(<></>);
     setModalShow(false);
   };
-  const afterSubmit = (categories) => {
+  const afterSubmit = (category) => {
     modalClose();
-    setCategories([...Categories, categories]);
+    setCategories([...categories, category]);
   };
   const showCreateModal = () => {
     setModalContent(<CategoriesCreate afterSubmit={afterSubmit} />);
